@@ -16,6 +16,7 @@
         <module>filterAndInterceptor_demo</module>
         <module>mongodb_demo</module>
         <module>rabbitmq_demo</module>
+        <module>mapStruct_demo</module>
     </modules>
 
     <parent>
