@@ -13,6 +13,7 @@
         <module>swagger_demo</module>
         <module>logback_demo</module>
         <module>elasticsearch_demo</module>
+        <module>filterAndInterceptor_demo</module>
     </modules>
 
     <parent>
