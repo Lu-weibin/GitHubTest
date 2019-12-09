@@ -10,6 +10,7 @@
         <module>webSocket_demo</module>
         <module>redis_demo</module>
         <module>email_demo</module>
+        <module>swagger_demo</module>
     </modules>
 
     <parent>
