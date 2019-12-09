@@ -12,6 +12,7 @@
         <module>email_demo</module>
         <module>swagger_demo</module>
         <module>logback_demo</module>
+        <module>elasticsearch_demo</module>
     </modules>
 
     <parent>
