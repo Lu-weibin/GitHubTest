@@ -1,0 +1,9 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: mongodb_demo
+  data:
+    mongodb:
+      host: localhost
+      database: spitdb
