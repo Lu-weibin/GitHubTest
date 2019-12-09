@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  mail:
+    host: smtp.qq.com
+    default-encoding: UTF-8
+    username: 1571701516@qq.com
+#    使用授权码
+    password:
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
