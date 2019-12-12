@@ -21,6 +21,7 @@
         <module>lambda_demo</module>
         <module>io_demo</module>
         <module>reflection_demo</module>
+        <module>annotation_demo</module>
     </modules>
 
     <parent>
