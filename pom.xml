@@ -20,6 +20,7 @@
         <module>shiro_JWT_demo</module>
         <module>lambda_demo</module>
         <module>io_demo</module>
+        <module>reflection_demo</module>
     </modules>
 
     <parent>
