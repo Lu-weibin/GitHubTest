@@ -18,7 +18,8 @@
         <module>rabbitmq_demo</module>
         <module>mapStruct_demo</module>
         <module>shiro_JWT_demo</module>
-        <module>spring-cloud-eureka-server</module>
+        <module>lambda_demo</module>
+        <module>io_demo</module>
     </modules>
 
     <parent>
