@@ -22,9 +22,9 @@
         <module>io_demo</module>
         <module>reflection_demo</module>
         <module>annotation_demo</module>
-        <module>test_demo</module>
         <module>hutool_demo</module>
         <module>other_demo</module>
+        <module>spring_security_demo</module>
     </modules>
 
     <parent>
