@@ -1,9 +1,10 @@
-package demo.code;
+package demo.validate.code;
 
 import lombok.Data;
 import lombok.ToString;
 
 import java.awt.image.BufferedImage;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -12,7 +13,7 @@ import java.time.LocalDateTime;
  */
 @Data
 @ToString
-public class ImageCode {
+public class ImageCode{
 	// 图片
 	private BufferedImage image;
 	// 验证码

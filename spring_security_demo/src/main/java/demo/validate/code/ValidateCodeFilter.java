@@ -1,4 +1,4 @@
-package demo.code;
+package demo.validate.code;
 
 import demo.controller.ValidateCodeController;
 import org.apache.commons.lang3.StringUtils;

@@ -1,3 +1,17 @@
 security:
   basic:
     enabled: true
+
+server:
+  servlet:
+    session:
+    #Session的最小有效期为60秒，也就是说即使你设置为小于60秒的值，其有效期还是为60秒
+      timeout: 3660
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/db_security?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: root
