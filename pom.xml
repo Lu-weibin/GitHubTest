@@ -25,6 +25,7 @@
         <module>hutool_demo</module>
         <module>other_demo</module>
         <module>spring_security_demo</module>
+        <module>aop_demo</module>
     </modules>
 
     <parent>
