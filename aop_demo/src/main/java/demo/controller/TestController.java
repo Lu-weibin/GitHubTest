@@ -13,15 +13,20 @@ public class TestController {
 
 	@Log("执行方法一")
 	@GetMapping("/one")
-	public void methodOne(String name) { }
+	public void methodOne(String name) {
+		System.out.println("执行方法一");
+	}
 
 	@Log("执行方法二")
 	@GetMapping("/two")
 	public void methodTwo() throws InterruptedException {
 		Thread.sleep(2000);
+		System.out.println("执行方法二");
 	}
 
 	@Log("执行方法三")
 	@GetMapping("/three")
-	public void methodThree(String name, String age) { }
+	public void methodThree(String name, String age) {
+		System.out.println("执行方法三");
+	}
 }

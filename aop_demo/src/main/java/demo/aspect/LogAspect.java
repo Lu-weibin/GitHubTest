@@ -60,7 +60,7 @@ public class LogAspect {
 		// 请求的方法参数名称
 		LocalVariableTableParameterNameDiscoverer u = new LocalVariableTableParameterNameDiscoverer();
 		String[] parameterNames = u.getParameterNames(method);
-		if (args != null && parameterNames != null) {
+		if (args != null) {
 			String params = "";
 			for (int i = 0; i < args.length; i++) {
 				params += " " + parameterNames[i] + ": " + args[i];
