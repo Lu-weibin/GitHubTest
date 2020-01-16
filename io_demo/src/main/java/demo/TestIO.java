@@ -1,5 +1,6 @@
 package demo;
 
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.util.ResourceUtils;
 import java.io.*;
 
@@ -11,11 +12,13 @@ public class TestIO {
 
 	public static void main(String[] args) throws IOException {
 		// File中的常用方法
-		method1();
+//		method1();
 		// finally中关闭流
-		method2();
+//		method2();
 		// try-with-resources 方式关闭流
-		method3();
+//		method3();
+		// 读取resource下的文件
+		method4();
 
 	}
 
@@ -41,9 +44,9 @@ public class TestIO {
 		file.getParentFile();
 		// 创建目录
 		file.mkdirs();
-		// 建新文件
+		// 新建文件
 		file.createNewFile();
-		// 建新文件前，先建父目录
+		// 新建文件前，先建父目录
 		file.getParentFile().mkdirs();
 		// 删除文件
 		file.delete();
@@ -79,4 +82,13 @@ public class TestIO {
 		}
 	}
 
+	private static void method4() throws IOException {
+		InputStream inputStream = new ClassPathResource("test2.txt").getInputStream();
+		BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
+		String line;
+		while ((line = br.readLine())!=null) {
+			System.out.println(line);
+		}
+		br.close();
+	}
 }

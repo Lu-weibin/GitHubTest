@@ -16,7 +16,7 @@ import java.util.Map;
 public class MongoDemo {
 	public static void main(String[] args) {
 		//创建连接
-		MongoClient client = new MongoClient("localhost");
+		MongoClient client = new MongoClient("127.0.0.1");
 		//打开数据库
 		MongoDatabase spitdb = client.getDatabase("spitdb");
 		//获取集合
@@ -38,6 +38,7 @@ public class MongoDemo {
 		map.put("content", "hahaha");
 		map.put("visits", 100);
 		Document document = new Document(map);
+		// 插入新文档
 		spit.insertOne(document);
 		client.close();
 	}

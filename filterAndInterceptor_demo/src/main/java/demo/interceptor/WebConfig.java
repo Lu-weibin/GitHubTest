@@ -11,8 +11,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  */
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter {
+
+	private final TimeInterceptor timeInterceptor;
+
 	@Autowired
-	private TimeInterceptor timeInterceptor;
+	public WebConfig(TimeInterceptor timeInterceptor) {
+		this.timeInterceptor = timeInterceptor;
+	}
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {

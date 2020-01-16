@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Random;
+
 /**
  * Created by luwb on 2019/12/03.
  * 控制器
@@ -12,12 +14,21 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("user")
 @RestController
 public class UserController {
-	@Autowired
-	private RedisTemplate<String, Object> redisTemplate;
 
-	@RequestMapping(value = "add",method = RequestMethod.POST)
-	public void add(@RequestBody User user) {
+	private final RedisTemplate<String, Object> redisTemplate;
+
+	@Autowired
+	public UserController(RedisTemplate<String, Object> redisTemplate) {
+		this.redisTemplate = redisTemplate;
+	}
+
+	@RequestMapping(value = "add")
+	public User add() {
+		Random random = new Random();
+		int id = random.nextInt(1000);
+		User user = new User(""+id,"name"+id,23);
 		redisTemplate.opsForValue().set("user_"+user.getId(),user);
+		return user;
 	}
 
 	@RequestMapping(value = "/{id}")
