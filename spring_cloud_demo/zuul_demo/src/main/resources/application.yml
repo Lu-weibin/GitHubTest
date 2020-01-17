@@ -1,0 +1,19 @@
+server:
+  port: 8004
+spring:
+  application:
+    name: zuul-demo
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+  instance:
+    prefer-ip-address: true
+zuul:
+  routes:
+    eureka-client-provide-demo:
+      path: /provide/**
+      serviceId: eureka-client-provide-demo
+    eureka-client-comsumer-demo:
+      path: /comsumer/**
+      serviceId: eureka-client-comsumer-demo

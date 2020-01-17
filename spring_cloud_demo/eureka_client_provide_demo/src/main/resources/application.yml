@@ -1,0 +1,12 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: eureka-client-provide-demo
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8001/eureka/
+  instance:
+    prefer-ip-address: true

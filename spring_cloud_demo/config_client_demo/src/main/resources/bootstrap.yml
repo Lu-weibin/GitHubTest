@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+#    name与projile为在git上的配置文件名
+      name: user
+      profile: dev
+      label: master
+#      uri为config服务端的ip+端口
+      uri: http://127.0.0.1:8005

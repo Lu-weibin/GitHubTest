@@ -1,0 +1,18 @@
+server:
+  port: 8003
+spring:
+  application:
+    name: eureka-client-comsumer-demo
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8001/eureka/
+  instance:
+    prefer-ip-address: true
+
+feign:
+  hystrix:
+    enabled: true
+
+

@@ -1,0 +1,17 @@
+server:
+  port: 8005
+spring:
+  application:
+    name: config-demo
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/lu_weibin/tensquare-config.git
+  rabbitmq:
+    host: localhost
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
