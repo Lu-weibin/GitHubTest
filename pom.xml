@@ -33,6 +33,7 @@
         <module>spring_cloud_demo/zuul_demo</module>
         <module>spring_cloud_demo/config_demo</module>
         <module>spring_cloud_demo/config_client_demo</module>
+        <module>scheduled_demo</module>
     </modules>
 
     <parent>
