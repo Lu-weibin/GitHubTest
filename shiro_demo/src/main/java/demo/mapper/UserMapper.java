@@ -1,6 +1,6 @@
 package demo.mapper;
 
-import demo.lambda.pojo.User;
+import demo.pojo.User;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

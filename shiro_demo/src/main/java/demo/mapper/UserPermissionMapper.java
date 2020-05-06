@@ -1,6 +1,6 @@
 package demo.mapper;
 
-import demo.lambda.pojo.Permission;
+import demo.pojo.Permission;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

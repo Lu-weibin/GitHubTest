@@ -1,8 +1,8 @@
 package demo.mapper;
 
 import demo.dto.GoodInfoDTO;
-import demo.lambda.pojo.GoodInfoBean;
-import demo.lambda.pojo.GoodTypeBean;
+import demo.pojo.GoodInfoBean;
+import demo.pojo.GoodTypeBean;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;

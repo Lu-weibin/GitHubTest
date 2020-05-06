@@ -1,7 +1,7 @@
 package demo.service.impl;
 
-import demo.lambda.pojo.User;
-import demo.lambda.pojo.UserOnline;
+import demo.pojo.User;
+import demo.pojo.UserOnline;
 import demo.service.SessionService;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.session.mgt.eis.SessionDAO;

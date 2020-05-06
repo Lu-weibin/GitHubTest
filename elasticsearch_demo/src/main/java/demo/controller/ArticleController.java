@@ -1,7 +1,7 @@
 package demo.controller;
 
 import demo.dao.ArticleSearchDao;
-import demo.lambda.pojo.Article;
+import demo.pojo.Article;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -16,8 +16,12 @@ import java.util.UUID;
 @RestController
 @RequestMapping("article")
 public class ArticleController {
-	@Autowired
-	private ArticleSearchDao articleSearchDao;
+
+	private final ArticleSearchDao articleSearchDao;
+
+	public ArticleController(ArticleSearchDao articleSearchDao) {
+		this.articleSearchDao = articleSearchDao;
+	}
 
 	@RequestMapping(method = RequestMethod.POST)
 	public void save(@RequestBody Article article) {

@@ -2,8 +2,8 @@ package demo.controller;
 
 import demo.dto.GoodInfoDTO;
 import demo.mapper.GoodInfoMapper;
-import demo.lambda.pojo.GoodInfoBean;
-import demo.lambda.pojo.GoodTypeBean;
+import demo.pojo.GoodInfoBean;
+import demo.pojo.GoodTypeBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

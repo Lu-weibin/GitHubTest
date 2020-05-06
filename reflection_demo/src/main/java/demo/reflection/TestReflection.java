@@ -1,6 +1,6 @@
 package demo.reflection;
 
-import demo.lambda.pojo.Hero;
+import demo.pojo.Hero;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;

@@ -1,7 +1,7 @@
 package demo.controller;
 
-import demo.lambda.pojo.ResponseBo;
-import demo.lambda.pojo.UserOnline;
+import demo.pojo.ResponseBo;
+import demo.pojo.UserOnline;
 import demo.service.SessionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
