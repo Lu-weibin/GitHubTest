@@ -1,6 +1,6 @@
 package demo.mapper;
 
-import demo.pojo.Role;
+import demo.lambda.pojo.Role;
 import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
 

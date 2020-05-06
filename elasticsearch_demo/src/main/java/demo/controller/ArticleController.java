@@ -1,7 +1,7 @@
 package demo.controller;
 
 import demo.dao.ArticleSearchDao;
-import demo.pojo.Article;
+import demo.lambda.pojo.Article;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

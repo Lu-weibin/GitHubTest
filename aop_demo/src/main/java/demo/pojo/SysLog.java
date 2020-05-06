@@ -1,5 +1,6 @@
 package demo.pojo;
 
+import ch.qos.logback.classic.net.SyslogAppender;
 import lombok.Data;
 import lombok.ToString;
 import java.io.Serializable;
@@ -10,7 +11,6 @@ import java.util.Date;
  * 实体
  */
 @Data
-@ToString
 public class SysLog implements Serializable {
 
 	private static final long serialVersionUID = -6309732882044872298L;

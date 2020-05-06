@@ -15,7 +15,7 @@ public class UserController {
 
 	@GetMapping("/{id:\\d+}")
 	public String get(@PathVariable String id) {
-		System.out.println(id);
+		System.out.println("controller中的方法执行" + id);
 		return "ok";
 	}
 }

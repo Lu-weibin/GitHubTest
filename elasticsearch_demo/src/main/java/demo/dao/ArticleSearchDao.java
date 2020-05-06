@@ -1,6 +1,6 @@
 package demo.dao;
 
-import demo.pojo.Article;
+import demo.lambda.pojo.Article;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;

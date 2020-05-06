@@ -9,7 +9,7 @@ import java.io.IOException;
  * Created by luwb on 2019/12/04.
  * 过滤器
  */
-@Component
+//@Component
 @WebFilter(urlPatterns = {"/*"})
 public class TimeFilter implements Filter {
 	@Override

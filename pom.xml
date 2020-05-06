@@ -18,7 +18,6 @@
         <module>rabbitmq_demo</module>
         <module>mapStruct_demo</module>
         <module>shiro_JWT_demo</module>
-        <module>lambda_demo</module>
         <module>io_demo</module>
         <module>reflection_demo</module>
         <module>annotation_demo</module>
@@ -34,6 +33,10 @@
         <module>spring_cloud_demo/config_demo</module>
         <module>spring_cloud_demo/config_client_demo</module>
         <module>scheduled_demo</module>
+        <module>enum_demo</module>
+        <module>leecode</module>
+        <module>java8_demo</module>
+        <module>dubbo_demo</module>
     </modules>
 
     <parent>

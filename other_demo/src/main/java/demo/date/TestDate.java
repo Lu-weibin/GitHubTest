@@ -43,7 +43,7 @@ public class TestDate {
 		System.out.println(format(now));
 		// 下个月的今天
 		calendar.setTime(now);
-		calendar.add(calendar.MONTH,1);
+		calendar.add(Calendar.MONTH,1);
 		System.out.println(format(calendar.getTime()));
 		// 去年的今天
 		calendar.setTime(now);

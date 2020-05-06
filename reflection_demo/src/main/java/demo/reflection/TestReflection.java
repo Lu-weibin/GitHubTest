@@ -1,6 +1,6 @@
 package demo.reflection;
 
-import demo.pojo.Hero;
+import demo.lambda.pojo.Hero;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -25,7 +25,7 @@ public class TestReflection {
 	}
 
 	private static void method1() throws ClassNotFoundException {
-		String className = "demo.pojo.Hero";
+		String className = "demo.lambda.pojo.Hero";
 		Class aClass1 = Class.forName(className);
 		Class<Hero> aClass2 = Hero.class;
 		Class aClass3 = new Hero().getClass();
@@ -42,7 +42,7 @@ public class TestReflection {
 		System.out.println(hero1);
 		// 使用反射方式创建对象
 		try {
-			String className = "demo.pojo.Hero";
+			String className = "demo.lambda.pojo.Hero";
 			Class<?> clazz = Class.forName(className);
 			Constructor<?> constructor = clazz.getConstructor();
 			Hero hero2 = (Hero) constructor.newInstance();

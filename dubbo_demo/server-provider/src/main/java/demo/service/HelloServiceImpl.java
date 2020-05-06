@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 /**
  * Created by luwb on 2019/12/10.
  * 实现类
+ * 注意 @Service注解是dubbo包下的
  */
 @Service(interfaceClass = HelloService.class)
 @Component

@@ -1,6 +1,6 @@
 package demo.scheduled;
 
-import demo.pojo.User;
+import demo.lambda.pojo.User;
 import demo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;

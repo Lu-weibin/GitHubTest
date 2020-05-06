@@ -1,6 +1,6 @@
 package demo.security;
 
-import demo.pojo.MyUser;
+import demo.lambda.pojo.MyUser;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

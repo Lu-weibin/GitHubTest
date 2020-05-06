@@ -1,6 +1,6 @@
 package demo.controller;
 
-import demo.pojo.User;
+import demo.lambda.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;

@@ -7,9 +7,9 @@ import java.util.Map;
 
 /**
  * Created by luwb on 2020/01/16.
+ *
+ * 使用hystrix,当提供的服务挂了的时候可以调用UserServiceImpl中的方法返回
  */
-//@FeignClient("eureka-client-provide-demo")
-//使用hystrix,当提供的服务挂了的时候可以调用UserServiceImpl中的方法返回
 @FeignClient(value = "eureka-client-provide-demo",fallback = UserServiceImpl.class)
 public interface UserService {
 

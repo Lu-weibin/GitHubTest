@@ -1,6 +1,6 @@
 package demo.repository;
 
-import demo.pojo.User;
+import demo.lambda.pojo.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

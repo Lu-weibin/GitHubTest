@@ -1,13 +1,16 @@
 package demo.controller;
 
 import demo.dao.SpitDao;
-import demo.pojo.Spit;
+import demo.lambda.pojo.Spit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.web.bind.annotation.*;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -38,8 +41,18 @@ public class SpitController {
 
 	@RequestMapping(value = "add",method = RequestMethod.POST)
 	public Spit add(Spit spit) {
-		spit.set_id(UUID.randomUUID().toString());
-		return spitDao.save(spit);
+		for (int i = 0; i < 10000; i++) {
+			spit.setThumbup(100);
+			spit.setState("1");
+			spit.setComment(1000);
+			spit.setContent("好开心");
+			spit.setNickname("小卢");
+			spit.setPublishtime(new Date());
+			spit.setUserid(new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()));
+			spit.set_id(UUID.randomUUID().toString());
+			spitDao.save(spit);
+		}
+		return null;
 	}
 
 	@RequestMapping(value = "update", method = RequestMethod.POST)
@@ -72,6 +85,13 @@ public class SpitController {
 //		update.inc("thumbup", 1);
 //		mongoTemplate.updateFirst(query, update, "spit");
 //		System.out.println(System.currentTimeMillis()-startTime);
-
 	}
+
+	@RequestMapping("count")
+	public long count() {
+		long count = spitDao.count();
+		System.out.println(count);
+		return count;
+	}
+
 }

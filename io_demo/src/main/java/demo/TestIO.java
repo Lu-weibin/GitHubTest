@@ -11,48 +11,18 @@ import java.io.*;
 public class TestIO {
 
 	public static void main(String[] args) throws IOException {
-		// File中的常用方法
-//		method1();
 		// finally中关闭流
-//		method2();
+//		method1();
 		// try-with-resources 方式关闭流
-//		method3();
+//		method2();
 		// 读取resource下的文件
+//		method3();
+		// 读取一个文件内容写入另一文件
 		method4();
 
 	}
 
-	private static void method1() throws IOException {
-		// 获取绝对路径
-		File file = new File("D:\\Git_project\\MyDemo\\io_demo\\src\\main\\resources\\test.txt");
-		System.out.println(file.getAbsolutePath());
-		// 文件是否存在、是否文件夹/文件、文件长度、文件最后修改时间、文件重命名
-		System.out.println(file.exists());
-		System.out.println(file.isDirectory());
-		System.out.println(file.isFile());
-		System.out.println(file.length());
-		System.out.println(file.lastModified());
-		File file2 = new File("D:\\Git_project\\MyDemo\\io_demo\\src\\main\\resources\\test2.txt");
-		System.out.println(file.renameTo(file2));
-		// 文件夹下所有的文件（String）
-		file.list();
-		// 文件夹下所有文件（File）
-		file.listFiles();
-		// 所在文件夹(String)
-		file.getParent();
-		// 所在文件夹（File）
-		file.getParentFile();
-		// 创建目录
-		file.mkdirs();
-		// 新建文件
-		file.createNewFile();
-		// 新建文件前，先建父目录
-		file.getParentFile().mkdirs();
-		// 删除文件
-		file.delete();
-	}
-
-	private static void method2() {
+	private static void method1() {
 		FileInputStream fis = null;
 		try {
 			File file = ResourceUtils.getFile("classpath:test.txt");
@@ -71,7 +41,7 @@ public class TestIO {
 		}
 	}
 
-	private static void method3() throws IOException {
+	private static void method2() throws IOException {
 		File file = ResourceUtils.getFile("classpath:test.txt");
 		try (FileReader fr = new FileReader(file)) {
 			char[] all = new char[(int) file.length()];
@@ -82,13 +52,28 @@ public class TestIO {
 		}
 	}
 
-	private static void method4() throws IOException {
+	private static void method3() throws IOException {
 		InputStream inputStream = new ClassPathResource("test2.txt").getInputStream();
 		BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
 		String line;
-		while ((line = br.readLine())!=null) {
+		while ((line = br.readLine()) != null) {
 			System.out.println(line);
 		}
 		br.close();
 	}
+
+	private static void method4() {
+		try (InputStream inputStream = new ClassPathResource("test2.txt").getInputStream();
+			 BufferedInputStream bis = new BufferedInputStream(inputStream);
+			 BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("D://temp/temp.txt"))) {
+			byte[] buffer = new byte[1024 * 8];
+			int len;
+			while ((len = bis.read(buffer)) != -1) {
+				bos.write(buffer, 0, len);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 }

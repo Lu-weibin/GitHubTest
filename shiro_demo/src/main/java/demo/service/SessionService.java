@@ -1,6 +1,6 @@
 package demo.service;
 
-import demo.pojo.UserOnline;
+import demo.lambda.pojo.UserOnline;
 
 import java.util.List;
 

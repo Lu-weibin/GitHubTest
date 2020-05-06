@@ -1,7 +1,7 @@
 package demo.controller;
 
-import demo.pojo.ResponseBo;
-import demo.pojo.User;
+import demo.lambda.pojo.ResponseBo;
+import demo.lambda.pojo.User;
 import demo.util.MD5Utils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;

@@ -72,7 +72,7 @@ spring:
 
 mybatis:
   # type-aliases扫描路径
-  type-aliases-package: demo.pojo
+  type-aliases-package: demo.lambda.pojo
   # mapper xml实现扫描路径
   mapper-locations: classpath:mapper/*.xml
   property:
