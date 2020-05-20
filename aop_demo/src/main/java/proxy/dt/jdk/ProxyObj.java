@@ -6,6 +6,8 @@ package proxy.dt.jdk;
  */
 public interface ProxyObj {
 
-    public void setAge(Integer age);
+    void setAge(Integer age);
+
+    void setName(String name);
 
 }
