@@ -22,6 +22,12 @@
         <module>composite</module>
         <module>decorator</module>
         <module>facade</module>
+        <module>flyweight</module>
+        <module>proxy</module>
+        <module>chain</module>
+        <module>command</module>
+        <module>interpreter</module>
+        <module>iterator</module>
     </modules>
 
 
