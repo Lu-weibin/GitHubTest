@@ -35,6 +35,11 @@
         <module>nullObject</module>
         <module>strategy</module>
         <module>template</module>
+        <module>visitor</module>
+        <module>mvc</module>
+        <module>frontController</module>
+        <module>InterceptingFilter</module>
+        <module>serviceLocator</module>
     </modules>
 
 
