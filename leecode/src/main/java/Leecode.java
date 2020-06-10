@@ -351,12 +351,7 @@ public class Leecode {
 		System.out.println("use time:" + (System.currentTimeMillis() - start2));
 	}
 
-	// 38. 外观数列
-
-	//public String countAndSay(int n) {
-	//
-	//	return null;
-	//}
+	// 38. 外观数列 ???
 
 	public String countAndSay(int n) {
 		StringBuilder s = new StringBuilder();
@@ -385,6 +380,155 @@ public class Leecode {
 	@Test
 	public void countAndSayTest() {
 		System.out.println(countAndSay(24));
+	}
+
+	// 53. 最大子序和 ???
+
+	public int maxSubArray(int[] nums) {
+		int pre = 0;
+		int maxAns = nums[0];
+		for (int num : nums) {
+			pre = Math.max(pre + num, num);
+			maxAns = Math.max(maxAns, pre);
+		}
+		return maxAns;
+	}
+
+	@Test
+	public void maxSubArrayTest() {
+		int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+		System.out.println(maxSubArray(nums));
+	}
+
+	// 58. 最后一个单词的长度
+
+	public int lengthOfLastWord(String s) {
+		if (s.trim().isEmpty()) return 0;
+		if (!s.contains(" ")) return s.length();
+		String[] strings = s.split(" ");
+		return strings[strings.length-1].length();
+	}
+
+	@Test
+	public void lengthOfLastWordTest() {
+		System.out.println(lengthOfLastWord("Hello world"));
+	}
+
+	// 66. 加一
+
+	public int[] plusOne(int[] digits) {
+		for (int i = digits.length - 1; i >= 0; i--) {
+			digits[i]++;
+			digits[i] = digits[i] % 10;
+			if (digits[i] != 0) {
+				return digits;
+			}
+		}
+		digits = new int[digits.length + 1];
+		digits[0] = 1;
+		return digits;
+	}
+
+	@Test
+	public void plusOneTest() {
+		int[] digits = {1, 2, 3};
+		int[] digits2 = {4, 3, 2, 1};
+		int[] digits3 = {9, 9, 9, 9};
+		System.out.println(Arrays.toString(plusOne(digits)));
+		System.out.println(Arrays.toString(plusOne(digits2)));
+		System.out.println(Arrays.toString(plusOne(digits3)));
+	}
+
+
+	// 67. 二进制求和
+
+	/**
+	 * 转数字
+	 */
+	public String addBinary(String a, String b) {
+		return Integer.toBinaryString(Integer.parseInt(a, 2) + Integer.parseInt(b, 2));
+	}
+
+	/**
+	 * 逐位计算 ???
+	 */
+	public String addBinary2(String a, String b) {
+		int n = a.length(), m = b.length();
+		if (n < m) return addBinary(b, a);
+		int L = Math.max(n, m);
+
+		StringBuilder sb = new StringBuilder();
+		int carry = 0, j = m - 1;
+		for(int i = L - 1; i > -1; --i) {
+			if (a.charAt(i) == '1') {
+				++carry;
+			}
+			if (j > -1 && b.charAt(j--) == '1') {
+				++carry;
+			}
+			if (carry % 2 == 1) {
+				sb.append('1');
+			} else {
+				sb.append('0');
+			}
+			carry /= 2;
+		}
+		if (carry == 1) {
+			sb.append('1');
+		}
+		sb.reverse();
+
+		return sb.toString();
+	}
+
+	@Test
+	public void addBinaryTest() {
+		System.out.println(addBinary("11", "1"));
+		System.out.println(addBinary2("1010", "1011"));
+	}
+
+	// 69. x 的平方根
+
+	/**
+	 * 二分查找
+	 *
+	 * 注意整型值溢出
+	 */
+	public int mySqrt(int x) {
+		int left = 0;
+		int right = x;
+		while (left <= right) {
+			//int mid = (left + right) / 2;
+			int mid = left + (right - left) / 2;
+			long mid2 = (long) mid * mid;
+			if (mid2 == x) {
+				return mid;
+			} else if (mid2 < x) {
+				left = mid + 1;
+			} else {
+				right = mid - 1;
+			}
+		}
+		return left * left == x ? left : left - 1;
+	}
+
+	@Test
+	public void mySqrtTest() {
+		System.out.println(mySqrt(2147395599));
+	}
+
+	// 70. 爬楼梯
+
+	public int climbStairs(int n) {
+
+		return 0;
+	}
+
+	@Test
+	public void climbStairsTest() {
+		System.out.println(climbStairs(2));
+		System.out.println(climbStairs(3));
+		System.out.println(climbStairs(10));
 	}
 
 }
