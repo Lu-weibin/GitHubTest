@@ -1,12 +1,12 @@
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
+import java.io.File;
+import java.util.*;
 
 /**
- * Created by luwb on 2020/03/27.
+ *
+ * @author luwb
+ * @date 2020/03/27
  */
 public class Leecode {
 
@@ -15,7 +15,7 @@ public class Leecode {
 	/**
 	 * 暴力破解
 	 */
-	public int[] twoSum(int[] nums, int target) {
+	private int[] twoSum(int[] nums, int target) {
 		for (int i = 0; i < nums.length - 1; i++) {
 			for (int j = i + 1; j < nums.length; j++) {
 				if (nums[i] + nums[j] == target) {
@@ -26,7 +26,7 @@ public class Leecode {
 		return null;
 	}
 
-	public int[] twoSum2(int[] nums, int target) {
+	private int[] twoSum2(int[] nums, int target) {
 		Map<Integer,Integer> hashMap = new HashMap<>();
 		for (int i = 0; i < nums.length; i++) {
 			if (hashMap.containsKey(target - nums[i])) {
@@ -47,7 +47,7 @@ public class Leecode {
 
 	// 7. 整数反转
 
-	public int reverse(int x) {
+	private int reverse(int x) {
 		int rev = 0;
 		while (x != 0) {
 			int pop = x % 10;
@@ -71,7 +71,7 @@ public class Leecode {
 
 	// 9. 回文数
 
-	public boolean isPalindrome(int x) {
+	private boolean isPalindrome(int x) {
 		if (x < 0 || x % 10 == 0 && x != 0) {
 			return false;
 		}
@@ -92,7 +92,7 @@ public class Leecode {
 
 	// 13. 罗马数字转整数
 
-	public int romanToInt(String s) {
+	private int romanToInt(String s) {
 		int preNum = getValue(s.charAt(0));
 		int sum = 0;
 		for (int i = 1; i < s.length(); i++) {
@@ -127,7 +127,7 @@ public class Leecode {
 
 	// 14. 最长公共前缀
 
-	public String longestCommonPrefix(String[] strs) {
+	private String longestCommonPrefix(String[] strs) {
 		if (strs.length == 0) {
 			return "";
 		}
@@ -153,7 +153,7 @@ public class Leecode {
 
 	// 20. 有效的括号
 
-	public boolean isValid(String s) {
+	private boolean isValid(String s) {
 		Stack<Character> stack = new Stack<>();
 		char[] chars = s.toCharArray();
 		for (char aChar : chars) {
@@ -187,7 +187,7 @@ public class Leecode {
 
 	// 21. 合并两个有序链表
 
-	public class ListNode {
+	public static class ListNode {
 		int val;
 		ListNode next;
 		ListNode() {}
@@ -195,7 +195,7 @@ public class Leecode {
 		ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 	}
 
-	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+	private ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 		ListNode pre = new ListNode(-1);
 		ListNode cur = pre;
 		while (l1 != null && l2 != null) {
@@ -238,7 +238,7 @@ public class Leecode {
 
 	// 26. 删除排序数组中的重复项
 
-	public int removeDuplicates(int[] nums) {
+	private int removeDuplicates(int[] nums) {
 		if (nums.length == 0) {
 			return 0;
 		}
@@ -261,7 +261,7 @@ public class Leecode {
 
 	// 27. 移除元素
 
-	public int removeElement(int[] nums, int val) {
+	private int removeElement(int[] nums, int val) {
 		int i = 0;
 		for (int j = 0; j < nums.length; j++) {
 			if (nums[j] != val) {
@@ -284,7 +284,7 @@ public class Leecode {
 
 	// 28. 实现 strStr() Java中的indexOf
 
-	public int strStr(String haystack, String needle) {
+	private int strStr(String haystack, String needle) {
 		int n = haystack.length();
 		int l = needle.length();
 		for (int start = 0; start < n - l + 1; start++) {
@@ -303,7 +303,7 @@ public class Leecode {
 
 	// 35. 搜索插入位置
 
-	public int searchInsert(int[] nums, int target) {
+	private int searchInsert(int[] nums, int target) {
 		for (int i = 0; i < nums.length; i++) {
 			if (nums[i] >= target) {
 				return i;
@@ -317,7 +317,7 @@ public class Leecode {
 
 	// 使用二分法解题
 
-	public int searchInsert2(int[] nums, int target){
+	private int searchInsert2(int[] nums, int target){
 		int left = 0;
 		int right = nums.length - 1;
 		while (left <= right) {
@@ -353,7 +353,7 @@ public class Leecode {
 
 	// 38. 外观数列 ???
 
-	public String countAndSay(int n) {
+	private String countAndSay(int n) {
 		StringBuilder s = new StringBuilder();
 		int p1 = 0;
 		int cur = 1;
@@ -384,7 +384,7 @@ public class Leecode {
 
 	// 53. 最大子序和 ???
 
-	public int maxSubArray(int[] nums) {
+	private int maxSubArray(int[] nums) {
 		int pre = 0;
 		int maxAns = nums[0];
 		for (int num : nums) {
@@ -402,9 +402,13 @@ public class Leecode {
 
 	// 58. 最后一个单词的长度
 
-	public int lengthOfLastWord(String s) {
-		if (s.trim().isEmpty()) return 0;
-		if (!s.contains(" ")) return s.length();
+	private int lengthOfLastWord(String s) {
+		if (s.trim().isEmpty()) {
+			return 0;
+		}
+		if (!s.contains(" ")) {
+			return s.length();
+		}
 		String[] strings = s.split(" ");
 		return strings[strings.length-1].length();
 	}
@@ -416,7 +420,7 @@ public class Leecode {
 
 	// 66. 加一
 
-	public int[] plusOne(int[] digits) {
+	private int[] plusOne(int[] digits) {
 		for (int i = digits.length - 1; i >= 0; i--) {
 			digits[i]++;
 			digits[i] = digits[i] % 10;
@@ -445,21 +449,23 @@ public class Leecode {
 	/**
 	 * 转数字
 	 */
-	public String addBinary(String a, String b) {
+	private String addBinary(String a, String b) {
 		return Integer.toBinaryString(Integer.parseInt(a, 2) + Integer.parseInt(b, 2));
 	}
 
 	/**
 	 * 逐位计算 ???
 	 */
-	public String addBinary2(String a, String b) {
+	private String addBinary2(String a, String b) {
 		int n = a.length(), m = b.length();
-		if (n < m) return addBinary(b, a);
-		int L = Math.max(n, m);
+		if (n < m) {
+			return addBinary(b, a);
+		}
+		int l = Math.max(n, m);
 
 		StringBuilder sb = new StringBuilder();
 		int carry = 0, j = m - 1;
-		for(int i = L - 1; i > -1; --i) {
+		for(int i = l - 1; i > -1; --i) {
 			if (a.charAt(i) == '1') {
 				++carry;
 			}
@@ -494,7 +500,7 @@ public class Leecode {
 	 *
 	 * 注意整型值溢出
 	 */
-	public int mySqrt(int x) {
+	private int mySqrt(int x) {
 		int left = 0;
 		int right = x;
 		while (left <= right) {
@@ -517,11 +523,16 @@ public class Leecode {
 		System.out.println(mySqrt(2147395599));
 	}
 
-	// 70. 爬楼梯
+	// 70. 爬楼梯 ???
 
-	public int climbStairs(int n) {
-
-		return 0;
+	private int climbStairs(int n) {
+		int p = 0, q = 0, r = 1;
+		for (int i = 1; i <= n; i++) {
+			p = q;
+			q = r;
+			r = p + q;
+		}
+		return r;
 	}
 
 	@Test
@@ -529,6 +540,298 @@ public class Leecode {
 		System.out.println(climbStairs(2));
 		System.out.println(climbStairs(3));
 		System.out.println(climbStairs(10));
+	}
+
+	// 83. 删除排序链表中的重复元素
+
+	/**
+	 * 时间复杂度O(n)，n为结点数
+	 * 空间复杂度O(1)
+	 */
+	private void deleteDuplicates(ListNode head) {
+		ListNode cur = head;
+		while (cur != null && cur.next != null) {
+			if (cur.val == cur.next.val) {
+				cur.next = cur.next.next;
+			} else {
+				cur = cur.next;
+			}
+		}
+	}
+
+	@Test
+	public void deleteDuplicatesTest() {
+		ListNode head = new ListNode(1);
+		ListNode node2 = new ListNode(1);
+		ListNode node3 = new ListNode(2);
+		head.next = node2;
+		node2.next = node3;
+
+		ListNode head2 = new ListNode(1);
+		ListNode node22 = new ListNode(1);
+		ListNode node23 = new ListNode(2);
+		ListNode node24 = new ListNode(3);
+		ListNode node25 = new ListNode(3);
+		head2.next = node22;
+		node22.next = node23;
+		node23.next = node24;
+		node24.next = node25;
+
+		deleteDuplicates(head);
+		deleteDuplicates(head2);
+		print(head);
+		System.out.println("\n--------");
+		print(head2);
+	}
+
+	// 88. 合并两个有序数组
+
+	/**
+	 * 先合并再排序
+	 */
+	private void merge(int[] nums1, int m, int[] nums2, int n) {
+		System.arraycopy(nums2, 0, nums1, m, n);
+		Arrays.sort(nums1);
+	}
+
+	/**
+	 * 双指针：从前往后
+	 *
+	 * 时间复杂度 : O(n+m)O(n + m)O(n+m)。
+	 * 空间复杂度 : O(m)O(m)O(m)。
+	 */
+	private void merge2(int[] nums1, int m, int[] nums2, int n) {
+		int[] nums1Copy = new int[m];
+		System.arraycopy(nums1, 0, nums1Copy, 0, m);
+		int p1 = 0, p2 = 0, p = 0;
+		while (p1 < m && p2 < n) {
+			nums1[p++] = nums1Copy[p1] < nums2[p2] ? nums1Copy[p1++] : nums2[p2++];
+		}
+		if (p1 < m) {
+			System.arraycopy(nums1Copy, p1, nums1, p1 + p2, m + n - p1 - p2);
+		}
+		if (p2 < n) {
+			System.arraycopy(nums2, p2, nums1, p1 + p2, m + n - p1 - p2);
+		}
+	}
+
+	/**
+	 * 双指针：从后往前
+	 *
+	 * 时间复杂度 : O(n+m)O(n + m)O(n+m)
+	 * 空间复杂度 : O(1)O(1)O(1)
+	 */
+	private void merge3(int[] nums1, int m, int[] nums2, int n) {
+		int p1 = m - 1, p2 = n - 1, p = m + n - 1;
+		while (p1 >= 0 && p2 >= 0) {
+			nums1[p--] = nums1[p1] > nums2[p2] ? nums1[p1--] : nums2[p2--];
+		}
+		System.arraycopy(nums2, 0, nums1, 0, p2 + 1);
+	}
+
+	@Test
+	public void mergeTest() {
+		int[] nums1 = {1, 2, 3, 0, 0, 0};
+		int[] nums2 = {2, 5, 6};
+		//merge(nums1, 3, nums2, 3);
+		//merge2(nums1, 3, nums2, 3);
+		merge3(nums1, 3, nums2, 3);
+		System.out.println(Arrays.toString(nums1));
+	}
+
+	// 118. 杨辉三角
+
+	private List<List<Integer>> generate(int numRows) {
+		List<List<Integer>> triangle = new ArrayList<>();
+		// 处理特殊情况：0行
+		if (numRows == 0) {
+			return triangle;
+		}
+		// 第一行总是为1
+		triangle.add(new ArrayList<>());
+		triangle.get(0).add(1);
+		for (int rowNum  = 1; rowNum  < numRows; rowNum ++) {
+			List<Integer> pre = triangle.get(rowNum  - 1);
+			List<Integer> curRow = new ArrayList<>();
+			// 行的第一个数字总是 1
+			curRow.add(1);
+			for (int j = 1; j < rowNum ; j++) {
+				curRow.add(pre.get(j - 1) + pre.get(j));
+			}
+			// 行的最后数字总是 1
+			curRow.add(1);
+			triangle.add(curRow);
+		}
+		return triangle;
+	}
+
+	@Test
+	public void generateTest() {
+		List<List<Integer>> listList = generate(5);
+		for (List<Integer> integers : listList) {
+			System.out.println(integers);
+		}
+	}
+
+	// 119. 杨辉三角 II
+	// 给定一个非负索引 k，其中 k ≤ 33，返回杨辉三角的第 k 行。
+
+	private List<Integer> getRow(int rowIndex) {
+		List<Integer> cur = new ArrayList<>();
+		List<Integer> pre = new ArrayList<>();
+		for (int i = 0; i <= rowIndex; i++) {
+			cur = new ArrayList<>();
+			for (int j = 0; j <= i; j++) {
+				if (j == 0 || j == i) {
+					cur.add(1);
+				} else {
+					cur.add(pre.get(j) + pre.get(j - 1));
+				}
+			}
+			pre = cur;
+		}
+		return cur;
+	}
+
+	@Test
+	public void getRowTest() {
+		System.out.println(getRow(3));
+	}
+
+	// 121. 买卖股票的最佳时机 一次买卖
+
+	/**
+	 * 暴力法
+	 */
+	private int maxProfit(int[] prices) {
+		int maxProfit = 0;
+		for (int i = 0; i < prices.length - 1; i++) {
+			for (int j = i + 1; j < prices.length; j++) {
+				int profit = prices[j] - prices[i];
+				if (profit > maxProfit) {
+					maxProfit = profit;
+				}
+			}
+		}
+		return maxProfit;
+	}
+
+	/**
+	 * 一次循环
+	 */
+	private int maxProfit2(int[] prices) {
+		int minPrice = Integer.MAX_VALUE;
+		int maxProfit = 0;
+		for (int price : prices) {
+			if (price < minPrice) {
+				minPrice = price;
+			}
+			if (price - minPrice > maxProfit) {
+				maxProfit = price - minPrice;
+			}
+		}
+		return maxProfit;
+	}
+
+	@Test
+	public void maxProfitTest() {
+		int[] prices1 = {7, 1, 5, 3, 6, 4};
+		int[] prices2 = {7, 6, 4, 3, 1};
+		System.out.println(maxProfit(prices1));
+		System.out.println(maxProfit(prices2));
+		System.out.println(maxProfit2(prices1));
+		System.out.println(maxProfit2(prices2));
+	}
+
+	// 买卖股票的最佳时机 II 可以多次买卖
+
+	private int maxProfit22(int[] prices) {
+		int maxProfit = 0;
+		for (int i = 1; i < prices.length; i++) {
+			if (prices[i] > prices[i - 1]) {
+				maxProfit = maxProfit + (prices[i] - prices[i - 1]);
+			}
+		}
+		return maxProfit;
+	}
+
+	@Test
+	public void maxProfit22Test() {
+		int[] prices1 = {7, 1, 5, 3, 6, 4};
+		int[] prices2 = {1, 2, 3, 4, 5};
+		int[] prices3 = {7, 6, 4, 3, 1};
+		System.out.println(maxProfit22(prices1));
+		System.out.println(maxProfit22(prices2));
+		System.out.println(maxProfit22(prices3));
+ 	}
+
+ 	// 167. 两数之和 II - 输入有序数组
+
+	/**
+	 * 暴力法
+	 */
+	private int[] twoSumIi(int[] numbers, int target) {
+		for (int i = 0; i < numbers.length - 1; i++) {
+			for (int j = i + 1; j < numbers.length; j++) {
+				if (numbers[i] + numbers[j] == target) {
+					return new int[]{i + 1, j + 1};
+				}
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * 双指针
+	 */
+	private int[] twoSumIi2(int[] numbers, int target) {
+		int low = 0;
+		int high = numbers.length - 1;
+		while (low < high) {
+			int sum = (numbers[low] + numbers[high]);
+			if (sum == target) {
+				return new int[]{low + 1, high + 1};
+			} else if (sum < target) {
+				low++;
+			} else {
+				high--;
+			}
+		}
+		return new int[]{-1, -1};
+	}
+
+
+	@Test
+	public void twoSum22Test() {
+		int[] numbers = {2, 7, 11, 15};
+		System.out.println(Arrays.toString(twoSumIi(numbers, 9)));
+		System.out.println(Arrays.toString(twoSumIi2(numbers, 9)));
+	}
+
+	// 169. 多数元素
+
+	private int majorityElement(int[] nums) {
+		Set<Integer> set = new HashSet<>();
+		int count = 0;
+		for (int num : nums) {
+			if (!set.add(num)) {
+				count++;
+				if (count > nums.length / 2) {
+					return num;
+				}
+			} else {
+				count = 1;
+			}
+		}
+		return 0;
+	}
+
+	@Test
+	public void majorityElementTest() {
+		int[] nums1 = {3, 2, 3};
+		int[] nums2 = {2, 2, 1, 1, 1, 2, 2};
+		System.out.println(majorityElement(nums1));
+		System.out.println(majorityElement(nums2));
 	}
 
 }

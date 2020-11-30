@@ -38,6 +38,7 @@
         <module>java8_demo</module>
         <module>dubbo_demo</module>
         <module>pattern</module>
+        <module>bloomFilter_demo</module>
     </modules>
 
     <parent>

@@ -4,7 +4,8 @@ import demo.hibernate_anno.pojo.Hero;
 import java.lang.reflect.Method;
 
 /**
- * Created by luwb on 2019/12/12.
+ * @author luwb
+ * @date 2019/12/12
  * 解析注解
  */
 public class ParseHibernateAnnotation {

@@ -6,7 +6,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Created by luwb on 2019/12/12.
+ *
+ * @author luwb
+ * @date 2019/12/12
  * 标识Id
  */
 @Retention(RetentionPolicy.RUNTIME)

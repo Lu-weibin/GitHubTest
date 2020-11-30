@@ -39,11 +39,7 @@ public class LoginController {
 		try {
 			subject.login(token);
 			return ResponseBo.ok();
-		} catch (UnknownAccountException e) {
-			return ResponseBo.error(e.getMessage());
-		} catch (IncorrectCredentialsException e) {
-			return ResponseBo.error(e.getMessage());
-		} catch (LockedAccountException e) {
+		} catch (UnknownAccountException | IncorrectCredentialsException | LockedAccountException e) {
 			return ResponseBo.error(e.getMessage());
 		} catch (AuthenticationException e) {
 			return ResponseBo.error("认证失败！");

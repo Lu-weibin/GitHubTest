@@ -3,7 +3,8 @@ package demo.anno;
 import java.lang.annotation.*;
 
 /**
- * Created by luwb on 2019/12/12.
+ * @author luwb
+ * @date 2019/12/12
  * 自定义注解
  */
 @Target({ElementType.METHOD,ElementType.TYPE})

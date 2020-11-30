@@ -9,17 +9,22 @@ import java.util.Random;
  */
 public class ThreadLocalExample implements Runnable {
 
-	// SimpleDateFormat非线程安全，所以每个线程都要有自己的独立副本
+	/**
+	 * SimpleDateFormat非线程安全，所以每个线程都要有自己的独立副本
+	 */
 	private static final ThreadLocal<SimpleDateFormat> formatter = ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyyMMdd HH:mm"));
-	// 不使用ThreadLoacl
+
+	/**
+	 * 不使用ThreadLocal
+ 	 */
 	private static SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd HH:mm");
 
 	public static void main(String[] args) throws InterruptedException {
 		ThreadLocalExample obj = new ThreadLocalExample();
 		for (int i = 0; i < 10; i++) {
-			// 使用ThreadLoacl
-//			Thread t = new Thread(obj, "" + i);
-			// 不使用ThreadLoacl
+			// 使用ThreadLocal
+			//Thread t = new Thread(obj, "" + i);
+			// 不使用ThreadLocal
 			Thread t = new Thread(new SimpleDateFormatRunnable(), "" + i);
 			Thread.sleep(new Random().nextInt(1000));
 			t.start();
