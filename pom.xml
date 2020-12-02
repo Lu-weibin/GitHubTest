@@ -39,6 +39,7 @@
         <module>dubbo_demo</module>
         <module>pattern</module>
         <module>bloomFilter_demo</module>
+        <module>RateLimiter_demo</module>
     </modules>
 
     <parent>
