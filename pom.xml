@@ -41,6 +41,7 @@
         <module>bloomFilter_demo</module>
         <module>RateLimiter_demo</module>
         <module>pdf_demo</module>
+        <module>mybatis_demo</module>
     </modules>
 
     <parent>
