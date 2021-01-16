@@ -11,6 +11,8 @@ import java.io.FileOutputStream;
 /**
  * @author luwb
  * @date 2020/12/15
+ *
+ * 将文字写入PDF并添加水印图片
  */
 public class PdfReport {
 
