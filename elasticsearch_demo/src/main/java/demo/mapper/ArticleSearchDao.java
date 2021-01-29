@@ -1,4 +1,4 @@
-package demo.dao;
+package demo.mapper;
 
 import demo.pojo.Article;
 import org.springframework.data.domain.Page;

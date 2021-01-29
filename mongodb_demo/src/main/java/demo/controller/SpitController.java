@@ -1,6 +1,6 @@
 package demo.controller;
 
-import demo.dao.SpitDao;
+import demo.mapper.SpitDao;
 import demo.pojo.Spit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
